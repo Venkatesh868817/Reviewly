@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+# Jupyter and generated transformer artifacts
+.ipynb_checkpoints/
+outputs/quick_transformer_predictions.csv
+outputs/transformer_comparison.csv
+outputs/transformer_models/

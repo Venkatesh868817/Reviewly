@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Reviewly — Product review insights</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell nav">
+        <div class="brand">
+          <span class="logo">✳</span>reviewly</div>
+        <div class="navright">Workspace <span class="avatar">T</span>
+        </div>
+      </div>
+    </header>
+    <main class="shell main">
+      <div class="eyebrow">
+        <i class="dot">
+        </i> CUSTOMER VOICE, MADE CLEAR</div>
+      <h1>Know what customers<br>really think.</h1>
+      <p class="sub">Turn product reviews into clear, useful insights.<br>Start with a product page link.</p>
+      <section class="searchcard">
+        <label class="label" for="url">Product page URL</label>
+        <div class="inputrow">
+          <div class="inputwrap">
+            <span class="searchicon">↗</span>
+            <input id="url" type="url" placeholder="Paste a product link, e.g. https://store.com/product" autocomplete="url">
+          </div>
+          <button class="btn" id="analyze">
+            <span>✦</span> Analyze reviews <span>→</span>
+          </button>
+        </div>
+        <div class="error" id="error">Enter a valid product page URL (for example, https://store.com/product).</div>
+        <div class="status" id="status">Checking product link…</div>
+        <div class="chips">
+          <span class="chip">✧ Sentiment analysis</span>
+          <span class="chip">▤ Download reviews CSV</span>
+          <span class="chip">◎ Review insights</span>
+        </div>
+      </section>
+      <section class="results hidden" id="results">
+        <div class="resulthead">
+          <div>
+            <h2>Review overview</h2>
+            <p id="product">A sample product analysis</p>
+          </div>
+          <button class="export" id="export" type="button" disabled>
+            <span>↓</span> Download reviews CSV</button>
+        </div>
+        
+        <div class="metrics">
+          <div class="metric">
+            <div class="metriclabel">Reviews analyzed</div>
+            <div class="metricval" id="total-reviews">0</div>
+            <div class="metricfoot">Across this product</div>
+          </div>
+          <div class="metric">
+            <div class="metriclabel">Positive sentiment</div>
+            <div class="metricval green" id="positive-percent">0%</div>
+            <div class="metricfoot" id="positive-count">0 positive reviews</div>
+          </div>
+          <div class="metric">
+            <div class="metriclabel">Average rating</div>
+            <div class="metricval"><span id="average-rating">N/A</span> <span style="font-size:15px;color:#d7963a">★</span>
+            </div>
+            <div class="metricfoot" id="rated-reviews">Out of 5 stars</div>
+          </div>
+          <div class="metric">
+            <div class="metriclabel">Common theme</div>
+            <div class="metricval" id="common-theme" style="font-size:19px">—</div>
+            <div class="metricfoot" id="common-theme-foot">Most repeated words</div>
+          </div>
+        </div>
+        <section class="checks" aria-live="polite">
+          <div>
+            <h3>Review checks</h3>
+            <p>Quick signals to help you interpret this sample.</p>
+          </div>
+          <div class="checkitem"><strong id="short-checks">0</strong><span>short reviews</span></div>
+          <div class="checkitem"><strong id="mismatch-checks">0</strong><span>rating and text differ</span></div>
+        </section>
+        <div class="tablecard">
+          <div class="tabletop">
+            <span>Recent reviews</span>
+            <span>Showing sample rows</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Review</th>
+                <th>Rating</th>
+                <th>Sentiment</th>
+                <th>Checks</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="rows">
+            </tbody>
+          </table>
+        </div>
+        <div class="footnote">Text and rating checks are signals for manual review; sentiment estimates are not definitive.</div>
+      </section>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
+
